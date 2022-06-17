@@ -6,6 +6,7 @@ import (
 	"github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client"
 	"github.com/nacos-group/nacos-sdk-go/v2/common/constant"
 	"github.com/nacos-group/nacos-sdk-go/v2/vo"
+	"github.com/readingtfsc/micro-plugin/registry"
 	"log"
 	"net/url"
 	"strings"
@@ -20,7 +21,7 @@ type Config struct {
 	Addr      string
 }
 
-func NewRegistry(ctx context.Context, config *Config) (*register, error) {
+func NewRegistry(ctx context.Context, config *Config) (registry.Registry, error) {
 	reg, err := builder(ctx, config)
 	if err != nil {
 		return nil, err

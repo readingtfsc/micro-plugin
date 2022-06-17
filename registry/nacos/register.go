@@ -2,7 +2,7 @@ package nacos
 
 import (
 	"context"
-	"micro-plugin/registry"
+	"github.com/readingtfsc/micro-plugin/registry"
 )
 
 func (r *register) Registry(ctx context.Context, servInfo *registry.ServInfo) error {
@@ -10,7 +10,7 @@ func (r *register) Registry(ctx context.Context, servInfo *registry.ServInfo) er
 	return nil
 }
 
-func (r *register) Deregister(ctx context.Context) error {
+func (r *register) Deregister(ctx context.Context, servInfo *registry.ServInfo) error {
 	//TODO
 	return nil
 }
